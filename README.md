@@ -13,3 +13,22 @@
 |  -e или --env  |  Установка переменных окружения для конфигурации |       —       |
 | --restart  |  Политика перезапуска контейнера |       unless-stopped      |
 | --memory  | Ограничение памяти для контейнера |       —       |
+
+## Пример команды docker run в блоке кода
+## Пример команды для запуска Redis в Docker
+
+```bash
+docker run -d \
+  --name my-redis \
+  -p 6379:6379 \
+  -v /my/local/data:/data \
+  -e REDIS_PASSWORD=yourpassword \
+  redis:latest
+
+## Инструкции по настройке через переменные окружения в списках
+1. Создайте директорию данных:
+mkdir -p /my/local/data
+2. Запустите контейнер:
+docker run -d --name my-redis -p 6379:6379 -v /my/local/data:/data -e REDIS_PASSWORD=yourpassword redis:latest
+3. Подключение:
+redis-cli -a yourpassword

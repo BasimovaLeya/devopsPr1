@@ -1,1 +1,1 @@
-# devopsPr1
+# Docker-контейнер для Redis
